@@ -1,9 +1,16 @@
-import cart from './IMG/cart.png';
+import Cart from './Cart';
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 
 function CartWidget() {
     return (
-      <> <img src={cart} alt="cart" />
+      <>
+       <Button variant="light">
+       <Cart/>
+      <Badge bg="dark">9</Badge>
+      </Button>
       </>
+         
     );
   }
   

@@ -1,3 +1,21 @@
-.texto {
-    font-size: 10rem;
+.button1 {
+    padding: .4rem;
+    font-size: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    
 }
+
+.buttongroup {
+    margin: 3rem;
+}
+
+.texto {
+    font-size: 1rem;
+    padding: .3rem;
+    display: flex;
+    flex-direction: row;
+
+}
+

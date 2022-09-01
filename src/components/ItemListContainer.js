@@ -1,10 +1,20 @@
 import './Comp.css';
+import ItemCount from './ItemCount';
 
-function ItemListContainer() {
-  return (
-   <> <div className="texto">Proximamente nuestro catalogo</div></>
-    
-  );
+function ItemListContainer () {
+
+const onAdd = (qty) => {
+    alert('Ha seleccionado'+ ' ' + qty + ' ' + 'prendas')
 }
 
+    return (
+    <ItemCount initial={1} stock={5} onAdd={onAdd} />
+    )
+
+
+   }
+
 export default ItemListContainer;
+
+
+
