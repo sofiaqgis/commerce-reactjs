@@ -8,7 +8,9 @@ const onAdd = (qty) => {
 }
 
     return (
+        
     <ItemCount initial={1} stock={5} onAdd={onAdd} />
+    
     )
 
 
