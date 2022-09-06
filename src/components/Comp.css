@@ -11,15 +11,21 @@
     margin: 3rem;
 }
 
-.texto {
-    font-size: 1rem;
-    padding: .3rem;
-    display: flex;
-    flex-direction: row;
 
-}
 
 .g-4 {
-    margin: 2rem;
+    margin: 1rem;
 }
 
+.texto {
+    margin: .4rem;
+}
+
+.detail {
+   margin: 1rem;
+    width: 90%;
+}
+
+.list-group-flush {
+    margin-right: 1rem;
+}

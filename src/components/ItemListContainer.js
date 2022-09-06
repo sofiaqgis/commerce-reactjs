@@ -1,22 +1,19 @@
 import './Comp.css';
-import ItemCount from './ItemCount';
+import Count from './Counter'
+import ItemList from './ItemList';
+import PortadaLogo from './Portada';
 
 function ItemListContainer () {
 
-const onAdd = (qty) => {
-    alert('Ha seleccionado'+ ' ' + qty + ' ' + 'prendas')
-}
-
     return (
-        
-    <ItemCount initial={1} stock={5} onAdd={onAdd} />
-    
+    <>
+    <PortadaLogo/>
+    <ItemList/>
+    <Count/>
+    </>
     )
 
 
    }
 
 export default ItemListContainer;
-
-
-
