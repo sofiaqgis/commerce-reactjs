@@ -3,7 +3,7 @@ import cart from './IMG/cart.png';
 function Cart() {
     return (
 
-       <img src={cart}/>
+       <img src={cart} alt="cart"/>
          
     );
   }

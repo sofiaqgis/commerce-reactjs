@@ -19,9 +19,9 @@ function ItemCount ({initial, stock, onAdd}) {
       return (
         <>
          <ButtonGroup className='buttongroup' aria-label='Basic example'>
-        <Button className='button1' variant='secondary' disabled={amount <= initial} onClick={Decrement}>-</Button>
+        <Button className='button1' variant='dark' disabled={amount <= initial} onClick={Decrement}>-</Button>
         <span className='texto'> {amount} </span>
-        <Button className='button1' variant="secondary"  disabled={amount >= stock} onClick={Increment}>+</Button>
+        <Button className='button1' variant="dark"  disabled={amount >= stock} onClick={Increment}>+</Button>
     </ButtonGroup>
     <Button variant='dark' disabled={stock <= 0} onClick={()=>onAdd(amount)}>Agregar al Carrito</Button>
         

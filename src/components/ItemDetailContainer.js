@@ -2,20 +2,25 @@
 import { useEffect, useState} from 'react';
 import ItemDetail from './ItemDetail';
 import './Comp.css';
-import getItem from './utils/getItem';
 import DataFromBD from './ItemsMocks'; 
+import customFetch from './utils/customFetch';
+import { useParams } from 'react-router-dom';
 
     
     function ItemDetailContainer () {
         
 
         const [dato, setDato] = useState({});
+        const {idItem} = useParams();
 
         useEffect(() => {
-            getItem(2000, DataFromBD [7])
-            .then(result => setDato(result))
-            .catch(err => console.log(err))
-        }, []);
+
+             customFetch(2000,DataFromBD.find (item => item.id == idItem))
+                .then(result => setDato(result))
+                .catch(err => console.log(err))
+
+
+        }, [idItem]);
     
      
 

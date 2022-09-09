@@ -5,22 +5,24 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
+import './Comp.css';
+import {Link} from 'react-router-dom';
 
 
 function ItemDetail ({item}) {
 
     const onAdd = (qty) => {
-        alert('Ha seleccionado'+ ' ' + qty + ' ' + 'prendas')
+        alert('Ha seleccionado'+' '+qty+' '+'prendas')
     }
 
 
     return (
-        <>
+        
    <Row className="justify-content-center">
-    <Card style={{ width: '68rem', margin: '4rem' }}>
-    <Row className="justify-content-center">
+    <Card style={{ width: '50rem', margin: '2rem', border: 'transparent' }}>
+    <Row xs={1} sm={2} md={2} className="justify-content-center g-4">
    <Col >
-    <Card.Img variant="top" className="img-fluid detail" src={item.img} />
+    <Card.Img variant="top" className="img-fluid rounded" src={item.img} />
     </Col>
     <Col>
       <Card.Body>
@@ -36,7 +38,7 @@ function ItemDetail ({item}) {
       </ListGroup>
       <Card.Body>
          <ItemCount initial={1} stock={item.stock} onAdd={onAdd} /> 
-         <Button style={{ margin: '2rem' }} variant="dark">Volver</Button>
+         <Link to='/' style={{textDecoration: 'none'}}><Button variant="outline-secondary" >Volver</Button></Link>
       </Card.Body>
     </Col>
     </Row>
@@ -44,7 +46,7 @@ function ItemDetail ({item}) {
        
         
   </Row>
-    </>
+    
 
     )
 

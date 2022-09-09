@@ -1,31 +1,60 @@
 .button1 {
     padding: .3rem;
     font-size: 1rem;
-
     display: flex;
     flex-direction: row;
     
 }
 
 .buttongroup {
-    margin: 3rem;
+    margin: 2rem;
+   
 }
 
 
 
 .g-4 {
     margin: 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: justify;
+}
+
+
+.columna-4 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .texto {
     margin: .4rem;
 }
 
-.detail {
-   margin: 1rem;
-    width: 90%;
+.rounded {
+    margin-bottom: 1rem;
 }
 
 .list-group-flush {
     margin-right: 1rem;
 }
+
+.margin {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-left: 10rem;
+    justify-content: center;
+}
+
+.marginRow {
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+

@@ -25,6 +25,8 @@ import img24 from './IMG/conjunto2.png';
 
 const DataFromBD = [
     {key: 0,
+        id: 0,
+        idCategory: 1,
         title: "Buzo Urbano",
         img: img1,
         pricetag: "$1500",
@@ -35,6 +37,8 @@ const DataFromBD = [
         price: 1500},
 
     {key: 1,
+        id: 1,
+        idCategory: 2,
         title: "Calza Animados",
         img: img2,
         pricetag: "$890",
@@ -45,6 +49,8 @@ const DataFromBD = [
         price: 890},
 
     {key: 2,
+        id: 2,
+        idCategory: 1,
         title: "Camisa Seda Clara",
         img: img3,
         pricetag: "$2100",
@@ -55,6 +61,8 @@ const DataFromBD = [
         price: 2100},
 
     {key: 3,
+        id: 3,
+        idCategory: 2,
         title: "Calza Animal Print",
         img: img4,
         pricetag: "$970",
@@ -65,6 +73,8 @@ const DataFromBD = [
         price: 970},
 
     {key: 4,
+        id: 4,
+        idCategory: 1,
         title: "Sweater Otawa",
         img: img5,
         pricetag: "$3400",
@@ -75,6 +85,8 @@ const DataFromBD = [
         price: 3400},
 
     {key: 5,
+        id: 5,
+        idCategory: 1,
         title: "Campera Mountain",
         img: img6,
         pricetag: "$5200",
@@ -85,6 +97,8 @@ const DataFromBD = [
         price: 5200},
     
     {key: 6,
+        id: 6, 
+        idCategory: 2,
         title: "Calza Streep",
         img: img7,
         pricetag: "$930",
@@ -95,6 +109,8 @@ const DataFromBD = [
         price: 930},
 
     {key: 7,
+        id: 7,
+        idCategory: 1,
         title: "Buzo Polar Pequeño",
         img: img8,
         pricetag: "$2400",
@@ -105,6 +121,8 @@ const DataFromBD = [
         price: 2400},
 
     {key: 8,
+        id: 8,
+        idCategory: 1,
         title: "Campera Urbano Hombre",
         img: img9,
         pricetag: "$5700",
@@ -115,6 +133,8 @@ const DataFromBD = [
          price: 5700},
    
     {key: 9,
+        id: 9,
+        idCategory: 2,
         title: "Calza Camuflaje",
         img: img10,
         pricetag: "$1200",
@@ -125,6 +145,8 @@ const DataFromBD = [
         price: 1200},
             
     {key: 10,
+        id: 10,
+        idCategory: 1,
          title: "Sweater Escocia",
         img: img11,
         pricetag: "$2600",
@@ -135,6 +157,8 @@ const DataFromBD = [
         price: 2600},
                 
     {key: 11,
+        id: 11,
+        idCategory: 1,
         title: "Campera Romántica",
         img: img12,
         pricetag: "$6200",
@@ -145,6 +169,8 @@ const DataFromBD = [
         price: 6200},
 
     {key: 12,
+        id: 12,
+        idCategory: 2,
         title: "Calza Forest",
         img: img13,
         pricetag: "$950",
@@ -155,6 +181,8 @@ const DataFromBD = [
         price: 950},
     
     {key: 13,
+        id: 13,
+        idCategory: 1,
         title: "Campera Aller",
         img: img14,
         pricetag: "$5800",
@@ -165,6 +193,8 @@ const DataFromBD = [
         price: 5800},
 
     {key: 14,
+        id: 14, 
+        idCategory: 2,
         title: "Mini Middler",
         img: img15,
         pricetag: "$2100",
@@ -175,6 +205,8 @@ const DataFromBD = [
         price: 2100},
 
     {key: 15,
+        id: 15,
+        idCategory: 2,
         title: "Pantalón Gabar",
         img: img16,
         pricetag: "$3100",
@@ -185,6 +217,8 @@ const DataFromBD = [
         price: 3100},
 
     {key: 16,
+        id: 16, 
+        idCategory: 1,
         title: "Remera Plana Lisa",
         img: img17,
         pricetag: "$900",
@@ -195,6 +229,8 @@ const DataFromBD = [
         price: 900},
 
     {key: 17,
+        id: 17,
+        idCategory: 1,
         title: "Remera Traver",
         img: img18,
         pricetag: "$1300",
@@ -205,6 +241,8 @@ const DataFromBD = [
         price: 1300},
         
     {key: 18,
+        id: 18,
+        idCategory: 3,
         title: "Vestido Lomule",
         img: img19,
         pricetag: "$4300",
@@ -215,6 +253,8 @@ const DataFromBD = [
         price: 4300},
         
     {key: 19,
+        id: 19,
+        idCategory: 1,
         title: "Remera Strep Marina",
         img: img20,
         pricetag: "$1600",
@@ -225,6 +265,8 @@ const DataFromBD = [
         price: 1600},
 
     {key: 20,
+        id: 20,
+        idCategory: 1,
         title: "Remera Gris Básica",
         img: img21,
         pricetag: "$920",
@@ -235,6 +277,8 @@ const DataFromBD = [
         price: 920},
 
     {key: 21,
+        id: 21, 
+        idCategory: 3,
         title: "Conjunto Arena",
         img: img22,
         pricetag: "$1920",
@@ -245,6 +289,8 @@ const DataFromBD = [
         price: 1920},
 
     {key: 22,
+        id: 22,
+        idCategory: 4,
         title: "Lazo Hallowen",
         img: img23,
         pricetag: "$720",
@@ -255,6 +301,8 @@ const DataFromBD = [
         price: 720},
 
     {key: 23,
+        id: 23, 
+        idCategory: 3,
         title: "Conjunto Enagua",
         img: img24,
         pricetag: "$2020",

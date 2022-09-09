@@ -1,5 +1,4 @@
 import './Comp.css';
-import Count from './Counter'
 import ItemList from './ItemList';
 import PortadaLogo from './Portada';
 
@@ -9,7 +8,6 @@ function ItemListContainer () {
     <>
     <PortadaLogo/>
     <ItemList/>
-    <Count/>
     </>
     )
 
