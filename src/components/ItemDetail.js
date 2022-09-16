@@ -7,14 +7,24 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import './Comp.css';
 import {Link} from 'react-router-dom';
+import React, { useContext } from 'react';
+import {useState} from 'react';
+import { CartContext } from './CartContext';
 
 
 function ItemDetail ({item}) {
 
-    const onAdd = (qty) => {
-        alert('Ha seleccionado'+' '+qty+' '+'prendas')
-    }
+  const[itemCount, setItemCount] = useState(0);
+  const {addItem} = useContext(CartContext);
 
+    const onAdd = (qty) => {
+        alert("Ha seleccionado "+ qty +" prendas")
+        
+        setItemCount(qty)
+        addItem(item, qty)
+ 
+      
+  }
 
     return (
         
@@ -37,7 +47,10 @@ function ItemDetail ({item}) {
         <ListGroup.Item>Unidades disponibles: {item.stock}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-         <ItemCount initial={1} stock={item.stock} onAdd={onAdd} /> 
+         { itemCount 
+          ? <Link to='/cart' style={{textDecoration: 'none'}}><Button className='buttongroup' variant="dark" >Check Out</Button></Link>
+          :  <ItemCount initial={1} stock={item.stock} title={item.title} img={item.img} onAdd={onAdd}/>
+          }
          <Link to='/' style={{textDecoration: 'none'}}><Button variant="outline-secondary" >Volver</Button></Link>
       </Card.Body>
     </Col>
