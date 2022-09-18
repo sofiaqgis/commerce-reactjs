@@ -1,7 +1,14 @@
 import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { Button, ListGroupItem } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
+import './Comp.css';
+
+
+
 
 function Cart () {
 
@@ -10,19 +17,27 @@ function Cart () {
 
     return (
         <>
-        <div><p>Carrito</p></div>
+        <Row className='margen3'>
         <ListGroup variant="flush">
         
         {
-               itemsCart.map((item) =>{
-            //    <ListGroupItem>{item}
-            //    <Button onClick={removeItem} variant="outline-secondary" >Eliminar</Button>
-            //    </ListGroupItem>}  )
-            console.log(item)})  
+               itemsCart.map(item =>
+                  
+                <ListGroup.Item>
+                <Row className="row row-cols-auto" >
+               <Col><Card.Img variant="top" style={{width: '4rem'}} src={item.img} /></Col>
+               <Col className="texto1">{item.title}</Col>
+               <Col className="texto1">{item.pricetag}</Col>
+               <Col>
+               <Button onClick={()=>removeItem(item.id)} variant="outline-secondary" >Eliminar</Button> 
+               </Col>   </Row>
+                </ListGroup.Item> )
+            
                } 
       
         </ListGroup>
-        <Button onClick={clear} variant="outline-secondary" >Vaciar carrito</Button>
+        </Row>
+        <Button onClick={clear} className='buttongroup' variant="outline-secondary" >Vaciar carrito</Button>
         </>
     )
 }
