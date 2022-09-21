@@ -7,7 +7,8 @@ function CartContextProvider ({children}) {
 
     const [itemsCart, setItemsCart] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
-    const [totalPrice, setTotalPrice] = useState(0);
+   
+    
 
 
     const addItem = (product, quantity) => {
@@ -15,8 +16,10 @@ function CartContextProvider ({children}) {
         if(!isInCart) {
             setTotalItems(totalItems + quantity)
             setItemsCart([...itemsCart, product])
+       
         } else {
-            setTotalPrice(totalPrice + product.price)
+          
+            setTotalItems(totalItems + quantity)
            
         }
      
@@ -26,14 +29,15 @@ function CartContextProvider ({children}) {
     const removeItem = (itemId) => {
 
         setItemsCart( itemsCart.filter (item => item.id !== itemId ))
-        setTotalItems(totalItems)
+    
             
     }
+
  
     const clear = () => {
         setItemsCart([]);
         setTotalItems(0);
-        setTotalPrice(0);
+    
 
     }
 

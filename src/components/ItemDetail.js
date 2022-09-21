@@ -22,7 +22,8 @@ function ItemDetail ({item}) {
         
         setItemCount(qty)
         addItem(item, qty)
- 
+        
+        
       
   }
 
@@ -38,6 +39,7 @@ function ItemDetail ({item}) {
       <Card.Body>
         <br></br>
         <Card.Title className="text-center">{item.title}</Card.Title>
+        <Card.Title className="text-center two">{item.pricetag}</Card.Title>
         <br></br>
       </Card.Body>
       <ListGroup className="list-group-flush">

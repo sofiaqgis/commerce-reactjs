@@ -24,6 +24,7 @@ import img23 from './IMG/accesorio1.png';
 import img24 from './IMG/conjunto2.png';
 
 const DataFromBD = [
+
     {key: 0,
         id: 0,
         idCategory: 1,
@@ -310,7 +311,8 @@ const DataFromBD = [
         style: "Antiguo",
         print: "Flores pequeñas",
         stock: 50,
-        price: 2020},
+        price: 2020}
+
 
 ]
 

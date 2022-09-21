@@ -10,18 +10,23 @@ import './Comp.css';
 
 
 
+
+
 function Cart () {
 
-    const {itemsCart, removeItem, clear} = useContext(CartContext);
+    const {itemsCart, totalItems, removeItem, clear} = useContext(CartContext);
 
 
     return (
         <>
-        <Row className='margen3'>
+        <Row className='row row-cols-auto'>
+     
+         
+         <Col className='columna-6'>
         <ListGroup variant="flush">
         
         {
-               itemsCart.map(item =>
+               itemsCart.map(item => 
                   
                 <ListGroup.Item>
                 <Row className="row row-cols-auto" >
@@ -31,14 +36,33 @@ function Cart () {
                <Col>
                <Button onClick={()=>removeItem(item.id)} variant="outline-secondary" >Eliminar</Button> 
                </Col>   </Row>
-                </ListGroup.Item> )
+                </ListGroup.Item>  )
             
                } 
-      
+               
         </ListGroup>
-        </Row>
-        <Button onClick={clear} className='buttongroup' variant="outline-secondary" >Vaciar carrito</Button>
+        </Col>
+  { totalItems!=0
+        ? <Col className='columna-6'>
+        <Card className='cardCheckOut' style={{ width: '25rem', height: '23rem' }}>
+      <Card.Body className='columna-5'>
+        <Card.Title className='textotitle'>Orden de compra</Card.Title>
+        <br></br>
+        <Card.Text className='three'>Subtotal: $</Card.Text>
+        <Card.Text className='three'>Impuestos: $</Card.Text>
+        <Card.Text className="four">Total: $</Card.Text>
+        <Card.Text className="buttongroup2"><Button className='buttongroup' variant="outline-dark">Finalizar compra</Button></Card.Text>
+      </Card.Body>
+    </Card>
+    <Button onClick={clear} className='buttongroup' variant="outline-secondary" >Vaciar carrito</Button>
+        </Col>
+       : <Col className='margin5 three'>Tu carrito esta vacío</Col>
+}
+       
+     </Row>
+
         </>
+        
     )
 }
 
