@@ -8,11 +8,29 @@ import Item from './Item';
 import Col from 'react-bootstrap/Col';
 import DataFromBD from './ItemsMocks';
 import { useParams } from 'react-router-dom';
+//import { collection, getDocs } from "firebase/firestore";
+//import {db} from './utils/FirebaseConfig';
+
 
 function ItemList () {
 
-    const [data, setData] = useState([]);
-    const {idCategory} = useParams();
+  const [data, setData] = useState([]);
+  const {idCategory} = useParams();
+
+
+  // useEffect(() => {
+  //   async function fetchProduct() {
+     
+  //   const itemCollection = await getDocs(collection(db, "products"));
+  //    const dataFromFirestore = itemCollection.docs.map (item => ({
+  //      id: item.id,
+  //      ...item.data()
+  //    }))
+  //     setData(dataFromFirestore);
+  //   }
+
+  //   fetchProduct();
+  // }, [data]); 
 
 
     useEffect(() => {

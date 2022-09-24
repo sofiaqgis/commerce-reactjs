@@ -11,20 +11,27 @@ function CartContextProvider ({children}) {
     
 
 
-    const addItem = (product, quantity) => {
+    const addItem = (product, qty) => {
         let isInCart = itemsCart.find((item) => item.id === product.id)
         if(!isInCart) {
-            setTotalItems(totalItems + quantity)
+            itemsCart.map(product => {
+                setItemsCart([...itemsCart, {product, quantity: qty} ])
+            })
+            setTotalItems(totalItems + qty)
             setItemsCart([...itemsCart, product])
-       
+            
         } else {
-          
-            setTotalItems(totalItems + quantity)
+            itemsCart.map(product => {
+                setItemsCart([...itemsCart, {product, quantity: product.quantity + qty} ])
+            })
+            setTotalItems(totalItems + qty)
            
         }
+        console.log(itemsCart)
      
     }
 
+    
 
     const removeItem = (itemId) => {
 
