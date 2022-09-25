@@ -2,11 +2,11 @@
 import { useEffect, useState} from 'react';
 import ItemDetail from './ItemDetail';
 import './Comp.css';
-import DataFromBD from './ItemsMocks'; 
-import customFetch from './utils/customFetch';
+//import DataFromBD from './ItemsMocks'; 
+//import customFetch from './utils/customFetch';
 import { useParams } from 'react-router-dom';
-//import { doc, getDoc } from "firebase/firestore";
-//import {db} from './utils/FirebaseConfig';
+import { doc, getDoc } from "firebase/firestore";
+import {db} from './utils/FirebaseConfig';
 
     
     function ItemDetailContainer () {
@@ -15,38 +15,56 @@ import { useParams } from 'react-router-dom';
         const [dato, setDato] = useState({});
         const {idItem} = useParams();
 
-        useEffect(() => {
+        // useEffect(() => {
 
-             customFetch(2000,DataFromBD.find (item => item.id == idItem))
-                .then(result => setDato(result))
-                .catch(err => console.log(err))
+        //      customFetch(2000,DataFromBD.find (item => item.id == idItem))
+        //         .then(result => setDato(result))
+        //         .catch(err => console.log(err))
 
 
-        }, [idItem]);
+        // }, [idItem]);
     
 
-  // useEffect(() => {
-  //   async function fetchItem() {
+  useEffect(() => {
+    async function fetchItem() {
      
-  //     const docRef = doc(db, "products", idItem);
-  //     const docSnap = await getDoc(docRef);
-  //     if(docSnap.exists()) {
-  //       return {
-  //         id: idItem,
-  //         ...docSnap.data()
-  //       }
+      const docRef = doc(db, "products", 1);
+      const docSnap = await getDoc(docRef);
+      if(docSnap.exists()) {
+        return {
+          id: 1,
+          ...docSnap.data()
+        }
 
-  //     } else {
-  //       console.log("Error")
-  //     }
+      } else {
+        console.log("Error")
+      }
     
-  //     setDato(docSnap);
-  //   }
+      setDato(docSnap);
+    }
 
-  //   fetchItem();
-  // }, [idItem]); 
-     
+    fetchItem();
+  }, [idItem]); 
 
+//   useEffect(() => {
+//        async function fetchItem() {
+
+// const docRef = doc(db, "products", "3");
+// const docSnap = await getDoc(docRef);
+
+// if (docSnap.exists()) {
+ 
+//   return {
+//              id: 3,
+//             ...docSnap.data()
+//            }
+// } else {
+  
+//   console.log("No such document!");
+// }
+//        }fetchItem();
+//       }, [3])
+      
 
    return (
     

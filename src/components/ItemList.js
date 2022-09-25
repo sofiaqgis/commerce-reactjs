@@ -2,14 +2,14 @@
 import Row from 'react-bootstrap/Row';
 import { useEffect, useState} from 'react';
 import './Comp.css';
-import customFetch from './utils/customFetch';
+//import customFetch from './utils/customFetch';
 import Spinner from 'react-bootstrap/Spinner';
 import Item from './Item';
 import Col from 'react-bootstrap/Col';
-import DataFromBD from './ItemsMocks';
+//import DataFromBD from './ItemsMocks';
 import { useParams } from 'react-router-dom';
-//import { collection, getDocs } from "firebase/firestore";
-//import {db} from './utils/FirebaseConfig';
+import { query, where, collection, getDocs } from "firebase/firestore";
+import {db} from './utils/FirebaseConfig';
 
 
 function ItemList () {
@@ -18,36 +18,45 @@ function ItemList () {
   const {idCategory} = useParams();
 
 
-  // useEffect(() => {
-  //   async function fetchProduct() {
+  useEffect(() => {
+    async function fetchProduct(idCategory) {
+
+  let q;
+
+  if(idCategory) {
+
+    q = query(collection(db, "products"), where ('idCategory', '==' , idCategory));
+  } else {
+    q = query(collection(db, "products"));
+  }
      
-  //   const itemCollection = await getDocs(collection(db, "products"));
-  //    const dataFromFirestore = itemCollection.docs.map (item => ({
-  //      id: item.id,
-  //      ...item.data()
-  //    }))
-  //     setData(dataFromFirestore);
-  //   }
+    const itemCollection = await getDocs(q);
+     const dataFromFirestore = itemCollection.docs.map (item => ({
+       id: item.id,
+       ...item.data()
+     }))
+      setData(dataFromFirestore);
+    }
 
-  //   fetchProduct();
-  // }, [data]); 
+    fetchProduct();
+  }, [idCategory]); 
 
 
-    useEffect(() => {
+    // useEffect(() => {
 
-      if(idCategory) {
-        customFetch(2000, DataFromBD.filter (item => item.idCategory == idCategory))
-        .then(datos => setData(datos))
-        .catch(err => console.log(err))
+    //   if(idCategory) {
+    //     customFetch(2000, DataFromBD.filter (item => item.idCategory == idCategory))
+    //     .then(datos => setData(datos))
+    //     .catch(err => console.log(err))
 
-      } else {
-        customFetch(2000, DataFromBD)
-        .then(datos => setData(datos))
-        .catch(err => console.log(err))
+    //   } else {
+    //     customFetch(2000, DataFromBD)
+    //     .then(datos => setData(datos))
+    //     .catch(err => console.log(err))
 
-      }
+    //   }
 
-    }, [idCategory]);
+    // }, [idCategory]);
 
 
    return (
