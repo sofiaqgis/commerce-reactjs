@@ -5,15 +5,15 @@ import './Comp.css';
 //import DataFromBD from './ItemsMocks'; 
 //import customFetch from './utils/customFetch';
 import { useParams } from 'react-router-dom';
-import { doc, getDoc } from "firebase/firestore";
-import {db} from './utils/FirebaseConfig';
+import { firestoreFetchOne} from './utils/firestoreFetch'
+
 
     
     function ItemDetailContainer () {
         
 
         const [dato, setDato] = useState({});
-        const {idItem} = useParams();
+        const {id} = useParams();
 
         // useEffect(() => {
 
@@ -25,26 +25,12 @@ import {db} from './utils/FirebaseConfig';
         // }, [idItem]);
     
 
-  useEffect(() => {
-    async function fetchItem() {
-     
-      const docRef = doc(db, "products", 1);
-      const docSnap = await getDoc(docRef);
-      if(docSnap.exists()) {
-        return {
-          id: 1,
-          ...docSnap.data()
-        }
-
-      } else {
-        console.log("Error")
-      }
+        useEffect(() => {
+          firestoreFetchOne(id)
+          .then(result => setDato(result))
+          .catch(err => console.log(err))
+        }, [id]);
     
-      setDato(docSnap);
-    }
-
-    fetchItem();
-  }, [idItem]); 
 
 //   useEffect(() => {
 //        async function fetchItem() {

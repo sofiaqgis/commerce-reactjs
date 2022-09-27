@@ -35,8 +35,11 @@ function Cart () {
                 <Row className="row row-cols-auto" >
                <Col><Card.Img variant="top" style={{width: '4rem'}} src={item.img} /></Col>
                <Col className="texto1">{item.title}</Col>
-               <Col className="texto1">{item.pricetag}</Col>
-      
+              <Col className="texto1">
+              <Row className="texto1">{item.pricetag} p/u</Row>
+               <Row className="texto1">{item.quantity} prenda(s)</Row>
+              </Col>
+              <Col className="texto1"></Col>
                <Col>
                <Button onClick={()=>removeItem(item.id)} variant="outline-secondary e22" >Eliminar</Button> 
                </Col>   </Row>
@@ -52,7 +55,7 @@ function Cart () {
       <Card.Body className='columna-5'>
         <Card.Title className='textotitle'>Orden de compra</Card.Title>
         <br></br>
-        <Card.Text className='three'>Subtotal:{totalItems} $</Card.Text>
+        <Card.Text className='three'>Subtotal: $</Card.Text>
         <Card.Text className='three'>Impuestos: $</Card.Text>
         <Card.Text className="four">Total: $</Card.Text>
         <Card.Text className="buttongroup2"><Button className='buttongroup' variant="outline-dark">Finalizar compra</Button></Card.Text>

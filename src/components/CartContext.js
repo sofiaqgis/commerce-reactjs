@@ -7,33 +7,43 @@ function CartContextProvider ({children}) {
 
     const [itemsCart, setItemsCart] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
+
    
     
 
 
-    const addItem = (product, qty) => {
-        let isInCart = itemsCart.find((item) => item.id === product.id)
+    const addItem = (item, qty) => {
+        let isInCart = itemsCart.find(product => product.id === item.id);
         if(!isInCart) {
-            itemsCart.map(product => {
-                setItemsCart([...itemsCart, {product, quantity: qty} ])
-            })
-            setTotalItems(totalItems + qty)
-            setItemsCart([...itemsCart, product])
-            
-        } else {
-            itemsCart.map(product => {
-                setItemsCart([...itemsCart, {product, quantity: product.quantity + qty} ])
-            })
-            setTotalItems(totalItems + qty)
-           
-        }
-        console.log(itemsCart)
-     
-    }
 
+            setItemsCart([
+                    ...itemsCart, 
+                  
+                    { 
+                    id: item.id,
+                    img: item.img,
+                    title: item.title,
+                    quantity: item.quantity + qty,
+                    price: item.price,
+                    pricetag: item.pricetag,
+                    stock: item.stock
+                } ]
+            )
+            setTotalItems(totalItems + qty)
+        
+     
+                
+            } else {
+            setTotalItems(totalItems + qty)
+            isInCart.quantity += qty
+            setItemsCart([...itemsCart])
+
+        }
+        
+    }
     
 
-    const removeItem = (itemId) => {
+const removeItem = (itemId) => {
 
         setItemsCart( itemsCart.filter (item => item.id !== itemId ))
     
@@ -44,6 +54,7 @@ function CartContextProvider ({children}) {
     const clear = () => {
         setItemsCart([]);
         setTotalItems(0);
+ 
     
 
     }
@@ -57,6 +68,6 @@ function CartContextProvider ({children}) {
     </CartContext.Provider>
 
     );
-}
 
+}
 export default CartContextProvider;

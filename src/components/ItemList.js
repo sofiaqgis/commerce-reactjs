@@ -8,8 +8,7 @@ import Item from './Item';
 import Col from 'react-bootstrap/Col';
 //import DataFromBD from './ItemsMocks';
 import { useParams } from 'react-router-dom';
-import { query, where, collection, getDocs } from "firebase/firestore";
-import {db} from './utils/FirebaseConfig';
+import { firestoreFetchTwo} from './utils/firestoreFetch'
 
 
 function ItemList () {
@@ -19,27 +18,10 @@ function ItemList () {
 
 
   useEffect(() => {
-    async function fetchProduct(idCategory) {
-
-  let q;
-
-  if(idCategory) {
-
-    q = query(collection(db, "products"), where ('idCategory', '==' , idCategory));
-  } else {
-    q = query(collection(db, "products"));
-  }
-     
-    const itemCollection = await getDocs(q);
-     const dataFromFirestore = itemCollection.docs.map (item => ({
-       id: item.id,
-       ...item.data()
-     }))
-      setData(dataFromFirestore);
-    }
-
-    fetchProduct();
-  }, [idCategory]); 
+    firestoreFetchTwo(idCategory)
+    .then(result => setData(result))
+    .catch(err => console.log(err))
+  }, [idCategory]);
 
 
     // useEffect(() => {
