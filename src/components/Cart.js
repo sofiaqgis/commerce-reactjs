@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 function Cart () {
 
-    const {itemsCart, totalItems, removeItem, clear} = useContext(CartContext);
+    const {itemsCart, subtotal, taxes, totalfinal, totalItems, removeItem, clear} = useContext(CartContext);
 
  
 
@@ -39,9 +39,10 @@ function Cart () {
               <Row className="texto1">{item.pricetag} p/u</Row>
                <Row className="texto1">{item.quantity} prenda(s)</Row>
               </Col>
+              <Col className="texto1">${subtotal}</Col>
               <Col className="texto1"></Col>
                <Col>
-               <Button onClick={()=>removeItem(item.id)} variant="outline-secondary e22" >Eliminar</Button> 
+               <Button onClick={()=>removeItem(item.id, item.quantity, item.price)} variant="outline-secondary e22" >Eliminar</Button> 
                </Col>   </Row>
                 </ListGroup.Item>  )
             
@@ -55,9 +56,9 @@ function Cart () {
       <Card.Body className='columna-5'>
         <Card.Title className='textotitle'>Orden de compra</Card.Title>
         <br></br>
-        <Card.Text className='three'>Subtotal: $</Card.Text>
-        <Card.Text className='three'>Impuestos: $</Card.Text>
-        <Card.Text className="four">Total: $</Card.Text>
+        <Card.Text className='three'>Subtotal: ${subtotal}</Card.Text>
+        <Card.Text className='three'>Impuestos: ${taxes}</Card.Text>
+        <Card.Text className="four">Total: ${totalfinal}</Card.Text>
         <Card.Text className="buttongroup2"><Button className='buttongroup' variant="outline-dark">Finalizar compra</Button></Card.Text>
       </Card.Body>
     </Card>
