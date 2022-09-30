@@ -7,9 +7,8 @@ function ItemListContainer () {
 
     return (
     <>
-    <PortadaLogo/>
+     <PortadaLogo/>
     <ItemList/>
-
     </>
     )
 

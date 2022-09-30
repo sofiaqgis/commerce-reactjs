@@ -10,6 +10,8 @@ import {Link} from 'react-router-dom';
 import React, { useContext } from 'react';
 import {useState} from 'react';
 import { CartContext } from './CartContext';
+import withReactContent from 'sweetalert2-react-content';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 
 function ItemDetail ({item}) {
@@ -17,14 +19,21 @@ function ItemDetail ({item}) {
   const[itemCount, setItemCount] = useState(0);
   const {addItem} = useContext(CartContext);
 
+  const MySwal = withReactContent(Swal);
+
     const onAdd = (qty) => {
-        alert("Ha seleccionado "+ qty +" prendas")
+
+      MySwal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Se agregaron ' + qty + ' prenda(s) de ' + item.title + ' a tu carrito',
+        showConfirmButton: false,
+        timer: 2500
+      })
         
         setItemCount(qty)
         addItem(item, qty)
-        
-        
-      
+       
   }
 
     return (
@@ -38,15 +47,15 @@ function ItemDetail ({item}) {
     <Col>
       <Card.Body>
         <br></br>
-        <Card.Title className="text-center">{item.title}</Card.Title>
+        <Card.Title className="text-center two">{item.title}</Card.Title>
         <Card.Title className="text-center two">{item.pricetag}</Card.Title>
         <br></br>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Color: {item.color}</ListGroup.Item>
-        <ListGroup.Item>Estilo: {item.style}</ListGroup.Item>
-        <ListGroup.Item>Estampa: {item.print}</ListGroup.Item>
-        <ListGroup.Item>Unidades disponibles: {item.stock}</ListGroup.Item>
+        <ListGroup.Item className="texto5">Color: {item.color}</ListGroup.Item>
+        <ListGroup.Item className="texto5">Estilo: {item.style}</ListGroup.Item>
+        <ListGroup.Item className="texto5">Estampa: {item.print}</ListGroup.Item>
+        <ListGroup.Item className="texto5">Unidades disponibles: {item.stock}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
          { itemCount 

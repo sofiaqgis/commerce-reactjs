@@ -7,9 +7,7 @@ function CartContextProvider ({children}) {
 
     const [itemsCart, setItemsCart] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
-    const [totalPrice, setTotalPrice] = useState(0);
 
-  
 
     const addItem = (item, qty) => {
         let isInCart = itemsCart.find(product => product.id === item.id);
@@ -30,14 +28,10 @@ function CartContextProvider ({children}) {
 
             )
             setTotalItems(totalItems + qty)
-            setTotalPrice(totalPrice + item.price)
            
-            
-              
             } else {
             setTotalItems(totalItems + qty)
             isInCart.quantity += qty
-            setTotalPrice(totalPrice + item.price)
             setItemsCart([...itemsCart])
 
         }
@@ -49,11 +43,11 @@ function CartContextProvider ({children}) {
 let subtotal = itemsCart.reduce((total, item) => total + item.quantity * item.price, 0) 
 
 
-const removeItem = (itemId, quanty, price) => {
+const removeItem = (itemId, quanty) => {
 
     setItemsCart( itemsCart.filter (item => item.id !== itemId ))
     setTotalItems(totalItems - quanty)
-    setTotalPrice(totalPrice - price)
+   
 
       
 }   
@@ -62,8 +56,6 @@ const removeItem = (itemId, quanty, price) => {
         setItemsCart([]);
         setTotalItems(0);
  
-    
-
     }
 
 const taxes = subtotal * 0.21

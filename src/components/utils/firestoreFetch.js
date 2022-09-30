@@ -2,6 +2,7 @@ import {db} from './FirebaseConfig';
 import {query, where, collection, getDocs} from "firebase/firestore";
 import {doc, getDoc} from 'firebase/firestore';
 
+
 export const firestoreFetchTwo = async (idCategory) => {
 
     let q;
@@ -37,3 +38,12 @@ export const firestoreFetchOne = async (id) => {
         }
       
     }
+
+
+
+
+
+
+
+
+  
