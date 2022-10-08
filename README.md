@@ -6,11 +6,11 @@ En este proyecto se accede al DOM vía Javascript para mostrar (desde un array, 
 
 ## Actualización
 
-Se agregaron las funcionalidades de mostrar los productos elegidos con PopOver y un formulario de contacto final para ingresar los datos de envío y de los productos del comprador al vendedor.
+Se agregaron las funcionalidades de mostrar los productos elegidos con Popover y un formulario de contacto final para ingresar los datos de envío y de los productos del comprador al vendedor.
 
 ## Deployment
 
-Este proyecto contiene solamente tecnología del lado del cliente. Por esta razón, para ejecutarlo tan solo es necesario abrir el archivo index.html en tu browser favorito.
+Este proyecto contiene solamente tecnología del lado del cliente. 
 
 ## Construido con
 
