@@ -1,7 +1,7 @@
 
 import Row from 'react-bootstrap/Row';
 import { useEffect, useState} from 'react';
-import './Comp.css';
+import './css/Comp.css';
 import Spinner from 'react-bootstrap/Spinner';
 import Item from './Item';
 import Col from 'react-bootstrap/Col';

@@ -1,7 +1,7 @@
 
 import { useEffect, useState} from 'react';
 import ItemDetail from './ItemDetail';
-import './Comp.css';
+import './css/Comp.css';
 import { useParams } from 'react-router-dom';
 import { firestoreFetchOne} from './utils/firestoreFetch'
 

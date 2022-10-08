@@ -42,13 +42,10 @@ function CartContextProvider ({children}) {
 
 let subtotal = itemsCart.reduce((total, item) => total + item.quantity * item.price, 0) 
 
-
 const removeItem = (itemId, quanty) => {
 
     setItemsCart( itemsCart.filter (item => item.id !== itemId ))
     setTotalItems(totalItems - quanty)
-   
-
       
 }   
           

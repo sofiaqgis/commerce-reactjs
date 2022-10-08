@@ -1,4 +1,4 @@
-import './Comp.css';
+import './css/Comp.css';
 import ItemList from './ItemList';
 import PortadaLogo from './Portada';
 

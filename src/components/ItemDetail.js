@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
-import './Comp.css';
+import './css/Comp.css';
 import {Link} from 'react-router-dom';
 import React, { useContext } from 'react';
 import {useState} from 'react';
@@ -19,20 +19,22 @@ function ItemDetail ({item}) {
   const[itemCount, setItemCount] = useState(0);
   const {addItem} = useContext(CartContext);
 
+
   const MySwal = withReactContent(Swal);
 
     const onAdd = (qty) => {
 
+   
+
       MySwal.fire({
+        text: 'Se agregaron ' + qty + ' prenda(s) de ' + item.title + ' a tu carrito',
+        color: '#fff',
         position: 'top-end',
-        icon: 'success',
-        title: 'Se agregaron ' + qty + ' prenda(s) de ' + item.title + ' a tu carrito',
-        showConfirmButton: false,
-        timer: 2500
       })
-        
+      
         setItemCount(qty)
         addItem(item, qty)
+   
        
   }
 

@@ -4,9 +4,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
-import './Comp.css';
+import './css/Comp.css';
+
 
 function NavBar() {
+
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -27,7 +29,9 @@ function NavBar() {
                 Accesorios
               </NavDropdown.Item></Link> 
             </NavDropdown>
-            <Nav.Item className="me-auto"><CartWidget/></Nav.Item>
+            <Nav.Item className="me-auto">
+              <CartWidget/>
+              </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

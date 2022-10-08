@@ -1,7 +1,7 @@
 import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import './Comp.css';
+import './css/Comp.css';
 
 function PortadaLogo() {
 

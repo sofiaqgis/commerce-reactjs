@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
 import CartContextProvider from './components/CartContext';
+import FormCreateOrder from './components/Form';
 
 
 
@@ -15,6 +16,7 @@ function App() {
     <NavBar/>
     <Routes>
       <Route path='/' element={<ItemListContainer/>} />
+      <Route path='/form' element={<FormCreateOrder/>} />
       <Route path='/category/:idCategory' element={<ItemListContainer/>} />
       <Route path='/item/:id' element={<ItemDetailContainer/>} />
       <Route path='/cart' element={<Cart/>} />
