@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sofiaqgis/commerce-reactjs/static/css/main.175533b7.css",
+    "main.js": "/sofiaqgis/commerce-reactjs/static/js/main.0a020af5.js",
+    "index.html": "/sofiaqgis/commerce-reactjs/index.html",
+    "main.175533b7.css.map": "/sofiaqgis/commerce-reactjs/static/css/main.175533b7.css.map",
+    "main.0a020af5.js.map": "/sofiaqgis/commerce-reactjs/static/js/main.0a020af5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.175533b7.css",
+    "static/js/main.0a020af5.js"
+  ]
+}
