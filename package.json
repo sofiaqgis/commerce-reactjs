@@ -20,13 +20,16 @@
     "react-scripts": "5.0.1",
     "sweetalert2": "^11.4.35",
     "sweetalert2-react-content": "^5.0.3",
+    "terser": "^5.15.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,5 +48,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "<img src=\"https://firebasestorage.googleapis.com/v0/b/clonas-shop.appspot.com/o/IMG%2Fimg1.jpg?alt=media&token=764c8f61-cd23-464f-b1a2-3d6212ed9444\" alt=\"readme\"/>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofiaqgis/commerce-reactjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sofiaqgis/commerce-reactjs/issues"
+  },
+  "homepage": "https://github.com/sofiaqgis/commerce-reactjs#readme"
 }
